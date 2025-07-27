@@ -1,17 +1,20 @@
 import { db } from "../../../utils/drizzle";
-import * as schema from "../../../db/schema";
+import * as schema from "../../../db/schema/auth-schema";
 
 export default defineEventHandler(async (event) => {
   const { firstName, lastName, email } = await readBody(event);
 
   const newUser = {
-    firstName,
-    lastName,
+    name: `${firstName} ${lastName}`, // Combine first and last name
     email,
+    emailVerified: false, // Default value for new users
+    image: null, // Default value for new users
     archived: false, // Default value for new users
+    createdAt: new Date(),
+    updatedAt: new Date(),
   };
 
-  const result = await db.insert(schema.users).values(newUser).returning();
+  const result = await db.insert(schema.user).values(newUser).returning();
 
   return result;
 });

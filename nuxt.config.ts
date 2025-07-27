@@ -10,5 +10,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     DB_FILE: "",
+    BETTER_AUTH_SECRET: "",
+    BETTER_AUTH_URL: "",
+    public: {},
   },
 });

@@ -1,3 +1,2 @@
 import { drizzle } from "drizzle-orm/libsql";
-const rc = useRuntimeConfig();
-export const db = drizzle(rc.DB_FILE);
+export const db = drizzle("file:./server/db/local.db");
