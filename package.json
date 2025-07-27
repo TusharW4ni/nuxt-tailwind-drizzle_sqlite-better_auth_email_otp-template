@@ -7,14 +7,27 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "db:g": "drizzle-kit generate",
+    "db:m": "drizzle-kit migrate",
+    "db:p": "drizzle-kit push",
+    "db:s": "pnpm dlx tsx ./server/db/seed.ts",
+    "db:r": "drizzle-kit reset"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.10",
+    "@nuxt/ui": "^3.3.0",
     "@tailwindcss/vite": "^4.1.11",
+    "drizzle-orm": "^0.44.3",
     "nuxt": "^4.0.1",
     "tailwindcss": "^4.1.11",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1"
   },
-  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad"
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
+  "devDependencies": {
+    "drizzle-kit": "^0.31.4",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14"
+  }
 }
